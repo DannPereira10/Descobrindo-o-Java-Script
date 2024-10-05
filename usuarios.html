@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuários</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body class="bg-warning">
+    <div id="usuarios" class="container">
+      <h1 class="text-center mt-4">Usuários de Teste via REST</h1>
+
+      <p class="text-center mt-3">
+        Dados deste exemplo são fornecidos pela API de testes
+        <a href="https://reqres.in" target="_blank">reqres.in</a>
+      </p>
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col-md-4" v-for="(user, index) in users" :key="index">
+            <div class="card m-3 p-2">
+              <img
+                :src="user.avatar"
+                class="card-img-top"
+                :alt="'Foto de ' + user.first_name"
+              />
+
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ user.first_name }} {{ user.last_name }}
+                </h5>
+                <p class="card-text">E-mail: {{ user.email }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="usuarios.js"></script>
+  </body>
+</html>
